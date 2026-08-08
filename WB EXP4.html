@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration Form</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+}
+
+.container{
+    width:450px;
+    background:white;
+    margin:40px auto;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+}
+
+h1{
+    text-align:center;
+    color:#0d47a1;
+    margin-bottom:20px;
+}
+
+label{
+    font-weight:bold;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.gender{
+    width:auto;
+}
+
+.buttons{
+    text-align:center;
+}
+
+button{
+    background:#0d47a1;
+    color:white;
+    border:none;
+    padding:10px 25px;
+    border-radius:5px;
+    cursor:pointer;
+    margin:5px;
+}
+
+button:hover{
+    background:#1565c0;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Student Registration</h1>
+
+<form action="#" method="post">
+
+<label>Student Name</label>
+<input type="text" placeholder="Enter your name" required>
+
+<label>Email</label>
+<input type="email" placeholder="Enter email" required>
+
+<label>Password</label>
+<input type="password" placeholder="Enter password">
+
+<label>Date of Birth</label>
+<input type="date">
+
+<label>Gender</label><br>
+
+<input class="gender" type="radio" name="gender"> Male
+<input class="gender" type="radio" name="gender"> Female
+
+<br><br>
+
+<label>Department</label>
+
+<select>
+
+<option>Select Department</option>
+
+<option>CSE</option>
+
+<option>ECE</option>
+
+<option>EEE</option>
+
+<option>MECH</option>
+
+</select>
+
+<label>Skills</label><br>
+
+<input class="gender" type="checkbox"> HTML
+
+<input class="gender" type="checkbox"> CSS
+
+<input class="gender" type="checkbox"> Java
+
+<br><br>
+
+<label>Address</label>
+
+<textarea rows="4"></textarea>
+
+<div class="buttons">
+
+<button type="submit">Register</button>
+
+<button type="reset">Clear</button>
+
+</div>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
