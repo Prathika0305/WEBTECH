@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<style>
+body{font-family:Arial;background:#eef;}
+form{
+  width:300px;margin:50px auto;
+  background:white;padding:20px;
+  border-radius:10px;
+}
+input{width:100%;padding:8px;margin:8px 0;}
+button{width:100%;padding:10px;background:#0077cc;color:white;border:none;}
+</style>
+<script>
+function validate(){
+  let name=document.getElementById("name").value;
+  let email=document.getElementById("email").value;
+  let reg=/^[a-zA-Z ]+$/;
+  if(!reg.test(name)){
+    alert("Enter valid name");
+    return false;
+  }
+  if(email.indexOf("@")==-1){
+    alert("Enter valid email");
+    return false;
+  }
+  alert("Registration Successful");
+  return true;
+}
+</script>
+</head>
+<body>
+<form onsubmit="return validate()">
+<h2>Student Registration</h2>
+<input type="text" id="name" placeholder="Name" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="text" placeholder="Department" required>
+<button type="submit">Register</button>
+</form>
+</body>
+</html>
