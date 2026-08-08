@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To-Do List</title>
+<style>
+body{font-family:Arial;padding:20px;background:#f4f4f4;}
+input{padding:8px;width:200px;}
+button{padding:8px 12px;}
+li{background:white;margin:5px 0;padding:10px;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>To-Do List</h2>
+<input type="text" id="task" placeholder="Enter task">
+<button onclick="addTask()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+let tasks=[];
+
+function addTask(){
+  let t=document.getElementById('task').value;
+  if(t==='') return;
+  tasks.push(t);
+  display();
+  document.getElementById('task').value='';
+}
+
+function display(){
+  let html='';
+  for(let i=0;i<tasks.length;i++){
+    html += '<li>'+tasks[i]+
+            ' <button onclick="editTask('+i+')">Edit</button>'+
+            ' <button onclick="deleteTask('+i+')">Delete</button></li>';
+  }
+  document.getElementById('list').innerHTML=html;
+}
+
+function editTask(i){
+  let n=prompt('Edit task',tasks[i]);
+  if(n) tasks[i]=n;
+  display();
+}
+
+function deleteTask(i){
+  tasks.splice(i,1);
+  display();
+}
+</script>
+</body>
+</html>
