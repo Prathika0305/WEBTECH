@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result Analysis</title>
+<style>
+body{font-family:Arial;padding:20px;}
+table{border-collapse:collapse;width:300px;}
+td,th{border:1px solid black;padding:8px;text-align:center;}
+</style>
+</head>
+<body>
+<h2>Student Result Analysis</h2>
+<button onclick="show()">Show Analysis</button>
+<p id="out"></p>
+<script>
+function show(){
+  let marks=[78,85,92,67,88];
+  let max=Math.max(...marks);
+  let min=Math.min(...marks);
+  let sum=0;
+  for(let m of marks) sum+=m;
+  let avg=sum/marks.length;
+  document.getElementById('out').innerHTML=
+  'Marks: '+marks+'<br>Highest: '+max+
+  '<br>Lowest: '+min+'<br>Average: '+avg.toFixed(2);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz App</title>
+<style>
+body{font-family:Arial;background:#eef;padding:20px;}
+.card{background:white;padding:20px;border-radius:10px;width:350px;}
+button{margin-top:10px;padding:8px 15px;}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>Simple Quiz</h2>
+
+<p>1. HTML stands for?</p>
+<input type="radio" name="q1" value="1"> Hyper Text Markup Language<br>
+<input type="radio" name="q1" value="0"> High Text Machine Language<br>
+
+<p>2. CSS is used for?</p>
+<input type="radio" name="q2" value="1"> Styling<br>
+<input type="radio" name="q2" value="0"> Database<br>
+
+<p>3. JavaScript is a?</p>
+<input type="radio" name="q3" value="1"> Programming Language<br>
+<input type="radio" name="q3" value="0"> Browser<br>
+
+<button onclick="score()">Submit</button>
+<p id="result"></p>
+</div>
+
+<script>
+function score(){
+  let s=0;
+  let q1=document.querySelector('input[name=q1]:checked');
+  let q2=document.querySelector('input[name=q2]:checked');
+  let q3=document.querySelector('input[name=q3]:checked');
+
+  if(q1) s+=Number(q1.value);
+  if(q2) s+=Number(q2.value);
+  if(q3) s+=Number(q3.value);
+
+  document.getElementById('result').innerHTML='Your Score: '+s+'/3';
+}
+</script>
+</body>
+</html>
