@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <rollno>192421357</rollno>
+        <name>K Prathika</name>
+        <department>Information Technology</department>
+        <year>3</year>
+        <email>prathika@example.com</email>
+        <mobile>9876543210</mobile>
+    </student>
+
+    <student>
+        <rollno>192421358</rollno>
+        <name>Riya</name>
+        <department>Computer Science</department>
+        <year>2</year>
+        <email>riya@example.com</email>
+        <mobile>9123456780</mobile>
+    </student>
+</students>

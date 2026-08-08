@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .form-container {
+            width: 400px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: blue;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 15px;
+        }
+
+        .radio, .checkbox {
+            width: auto;
+        }
+
+        .buttons input {
+            width: 48%;
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .buttons input[type="reset"] {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h2>Student Registration Form</h2>
+
+    <form>
+
+        <!-- Text Box -->
+        <label>Full Name:</label>
+        <input type="text" name="name" placeholder="Enter your name">
+
+        <!-- Email Field -->
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="Enter your email">
+
+        <!-- Password Field -->
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Enter password">
+
+        <!-- Radio Button -->
+        <label>Gender:</label><br>
+        <input class="radio" type="radio" name="gender" value="male"> Male
+        <input class="radio" type="radio" name="gender" value="female"> Female
+        <input class="radio" type="radio" name="gender" value="other"> Other
+        <br><br>
+
+        <!-- Dropdown List -->
+        <label>Course:</label>
+        <select name="course">
+            <option>Select Course</option>
+            <option>BCA</option>
+            <option>B.Sc Computer Science</option>
+            <option>B.Tech</option>
+            <option>MCA</option>
+        </select>
+
+        <!-- Checkbox -->
+        <label>Hobbies:</label><br>
+        <input class="checkbox" type="checkbox" name="hobby" value="sports"> Sports
+        <input class="checkbox" type="checkbox" name="hobby" value="music"> Music
+        <input class="checkbox" type="checkbox" name="hobby" value="reading"> Reading
+        <br><br>
+
+        <!-- Textarea -->
+        <label>Address:</label>
+        <textarea name="address" rows="4" placeholder="Enter your address"></textarea>
+
+        <!-- Submit and Reset Buttons -->
+        <div class="buttons">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
