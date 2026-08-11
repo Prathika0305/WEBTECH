@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMATS Event Portal</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #notice{
+            background:#fff3cd;
+            text-align:center;
+            padding:10px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">SIMATS UNIVERSITY</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#register">Register</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div id="notice">Admissions & Event Registration Open for August 2026</div>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>University Event Registration Portal</h1>
+            <p>Register for technical workshops, hackathons, cultural events and placement programmes.</p>
+            <p style="color:#ffe082;font-weight:bold;">Early registration is free for the first 100 students.</p>
+            <a href="#register" class="btn">Register Now</a>
+        </div>
+    </section>
+
+    <section id="events" class="events">
+        <h2>Featured Events</h2>
+
+        <div class="grid">
+
+            <div class="card featured">
+                <span class="badge">OPEN</span>
+                <h3>AI Hackathon</h3>
+                <p class="category">Technical</p>
+                <p>18 Aug 2026 • Innovation Lab</p>
+                <p>Build real-world AI solutions in a 24-hour coding challenge.</p>
+                <button>Register</button>
+            </div>
+
+            <div class="card">
+                <span class="badge closed">CLOSED</span>
+                <h3>Cultural Fest</h3>
+                <p class="category">Cultural</p>
+                <p>20 Aug 2026 • Open Auditorium</p>
+                <p>Music, dance, drama and student performances.</p>
+                <button disabled>Closed</button>
+            </div>
+
+            <div class="card">
+                <span class="badge">OPEN</span>
+                <h3>Placement Bootcamp</h3>
+                <p class="category">Placement</p>
+                <p>22 Aug 2026 • Seminar Hall</p>
+                <p>Resume building and mock interviews.</p>
+                <button>Register</button>
+            </div>
+
+            <div class="card">
+                <span class="badge">OPEN</span>
+                <h3>Sports Meet</h3>
+                <p class="category">Sports</p>
+                <p>24 Aug 2026 • University Ground</p>
+                <p>Football, volleyball and athletics competitions.</p>
+                <button>Register</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="register" class="register">
+        <h2>Student Registration</h2>
+
+        <form class="form">
+            <input type="text" placeholder="Student Name" required>
+            <input type="text" placeholder="Register Number" required>
+            <input type="email" placeholder="Email Address" required>
+
+            <select required>
+                <option>Select Department</option>
+                <option>IT</option>
+                <option>CSE</option>
+                <option>ECE</option>
+            </select>
+
+            <select required>
+                <option>Select Event</option>
+                <option>AI Hackathon</option>
+                <option>Cultural Fest</option>
+                <option>Placement Bootcamp</option>
+                <option>Sports Meet</option>
+            </select>
+
+            <button type="submit" class="submit">Submit Registration</button>
+        </form>
+    </section>
+
+    <a href="#register" class="help">?</a>
+
+    <footer id="contact">
+        <p>events@simats.edu.in | +91 98765 43210</p>
+        <p>© 2026 SIMATS University</p>
+    </footer>
+
+</body>
+</html>
