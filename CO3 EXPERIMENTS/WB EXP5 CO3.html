@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Cross Browser Compatibility</title>
+
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+/* Header */
+
+header {
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #164e63
+    );
+
+    color: white;
+    padding: 25px 7%;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #22d3ee;
+}
+
+header p {
+    color: #bae6fd;
+    margin-top: 5px;
+}
+
+/* Main */
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 45px auto;
+}
+
+.title {
+    margin-bottom: 25px;
+}
+
+.title h1 {
+    font-size: 35px;
+}
+
+.title p {
+    color: #64748b;
+}
+
+/* Compatibility status */
+
+.status-card {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow:
+        0 10px 30px rgba(15,23,42,0.08);
+
+    margin-bottom: 25px;
+}
+
+.status-card h2 {
+    margin-bottom: 20px;
+}
+
+.status-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.feature {
+
+    padding: 20px;
+
+    background: #f8fafc;
+
+    border-radius: 12px;
+
+    border-left:
+        4px solid #0891b2;
+}
+
+.feature h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.supported {
+    color: #059669;
+    font-weight: bold;
+}
+
+.not-supported {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+/* Storage */
+
+.storage-card {
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #164e63
+    );
+
+    color: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+}
+
+.storage-card h2 {
+    margin-bottom: 8px;
+}
+
+.storage-card p {
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    margin-bottom: 12px;
+
+    outline: none;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.save {
+    background: #06b6d4;
+    color: white;
+}
+
+.load {
+    background: #334155;
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+#storageMessage {
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    background: rgba(255,255,255,0.1);
+
+    border-radius: 8px;
+
+    color: #e0f2fe;
+}
+
+.info {
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    background: #ecfeff;
+
+    color: #155e75;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+}
+
+
+/*
+    CSS Feature Detection
+
+    Modern browser:
+    display:grid
+
+    Older browser:
+    display:block
+*/
+
+@supports (display: grid) {
+
+    .status-grid {
+        display: grid;
+    }
+
+}
+
+
+@supports not (display: grid) {
+
+    .status-grid {
+        display: block;
+    }
+
+    .feature {
+        margin-bottom: 15px;
+    }
+
+}
+
+
+@media(max-width: 700px) {
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+
+    <div class="logo">
+        CAMPUS<span>CONNECT</span>
+    </div>
+
+    <p>
+        Cross-Browser Compatibility Demonstration
+    </p>
+
+</header>
+
+
+<div class="container">
+
+    <div class="title">
+
+        <h1>Browser Compatibility</h1>
+
+        <p>
+            Feature detection and fallback techniques
+            for reliable web applications.
+        </p>
+
+    </div>
+
+
+    <!-- FEATURE STATUS -->
+
+    <div class="status-card">
+
+        <h2>Feature Support</h2>
+
+        <div class="status-grid">
+
+            <div class="feature">
+
+                <h3>querySelector()</h3>
+
+                <div id="queryStatus">
+                    Checking...
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>localStorage</h3>
+
+                <div id="storageStatus">
+                    Checking...
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>CSS Grid</h3>
+
+                <div id="gridStatus">
+                    Checking...
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- LOCAL STORAGE -->
+
+    <div class="storage-card">
+
+        <h2>Local Storage Test</h2>
+
+        <p>
+            Store and retrieve student information
+            using browser localStorage.
+        </p>
+
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Enter student name"
+        >
+
+        <div class="buttons">
+
+            <button
+                class="save"
+                id="saveButton">
+
+                Save Data
+
+            </button>
+
+            <button
+                class="load"
+                id="loadButton">
+
+                Load Data
+
+            </button>
+
+        </div>
+
+        <div id="storageMessage">
+            No operation performed yet.
+        </div>
+
+    </div>
+
+
+    <div class="info">
+
+        <strong>Compatibility Technique:</strong>
+
+        This webpage checks whether browser features
+        are available before using them. If a feature
+        is unsupported, a fallback method or alternative
+        CSS layout is provided.
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+/*
+====================================================
+1. FEATURE DETECTION - querySelector()
+====================================================
+*/
+
+let queryStatus =
+    document.getElementById("queryStatus");
+
+
+if (document.querySelector) {
+
+    queryStatus.textContent =
+        "✓ Supported";
+
+    queryStatus.className =
+        "supported";
+
+} else {
+
+    queryStatus.textContent =
+        "✗ Not Supported";
+
+    queryStatus.className =
+        "not-supported";
+
+}
+
+
+/*
+====================================================
+2. FEATURE DETECTION - localStorage
+====================================================
+*/
+
+function checkLocalStorage() {
+
+    try {
+
+        let test =
+            "__storage_test__";
+
+        localStorage.setItem(
+            test,
+            test
+        );
+
+        localStorage.removeItem(
+            test
+        );
+
+        return true;
+
+    }
+
+    catch (error) {
+
+        return false;
+
+    }
+
+}
+
+
+let storageAvailable =
+    checkLocalStorage();
+
+
+let storageStatus =
+    document.getElementById("storageStatus");
+
+
+if (storageAvailable) {
+
+    storageStatus.textContent =
+        "✓ Supported";
+
+    storageStatus.className =
+        "supported";
+
+} else {
+
+    storageStatus.textContent =
+        "✗ Not Supported";
+
+    storageStatus.className =
+        "not-supported";
+
+}
+
+
+/*
+====================================================
+3. CSS FEATURE DETECTION
+====================================================
+*/
+
+let gridStatus =
+    document.getElementById("gridStatus");
+
+
+if (
+    window.CSS &&
+    CSS.supports &&
+    CSS.supports(
+        "display",
+        "grid"
+    )
+) {
+
+    gridStatus.textContent =
+        "✓ Supported";
+
+    gridStatus.className =
+        "supported";
+
+} else {
+
+    gridStatus.textContent =
+        "Fallback Layout";
+
+    gridStatus.className =
+        "not-supported";
+
+}
+
+
+/*
+====================================================
+4. SAVE DATA
+====================================================
+*/
+
+document
+    .getElementById("saveButton")
+    .addEventListener(
+        "click",
+        function() {
+
+            let name =
+                document
+                .getElementById("studentName")
+                .value
+                .trim();
+
+
+            if (name === "") {
+
+                document
+                .getElementById("storageMessage")
+                .textContent =
+                    "Please enter a student name.";
+
+                return;
+
+            }
+
+
+            if (!storageAvailable) {
+
+                /*
+                    FALLBACK
+                */
+
+                document
+                .getElementById("storageMessage")
+                .textContent =
+                    "localStorage is unavailable. " +
+                    "Data cannot be stored permanently.";
+
+                return;
+
+            }
+
+
+            localStorage.setItem(
+                "studentName",
+                name
+            );
+
+
+            document
+            .getElementById("storageMessage")
+            .textContent =
+                "✓ Student name saved successfully.";
+
+        }
+    );
+
+
+/*
+====================================================
+5. LOAD DATA
+====================================================
+*/
+
+document
+    .getElementById("loadButton")
+    .addEventListener(
+        "click",
+        function() {
+
+            if (!storageAvailable) {
+
+                document
+                .getElementById("storageMessage")
+                .textContent =
+                    "localStorage is unavailable.";
+
+                return;
+
+            }
+
+
+            let savedName =
+                localStorage.getItem(
+                    "studentName"
+                );
+
+
+            if (savedName) {
+
+                document
+                .getElementById("studentName")
+                .value =
+                    savedName;
+
+
+                document
+                .getElementById("storageMessage")
+                .textContent =
+                    "✓ Saved student: " +
+                    savedName;
+
+            } else {
+
+                document
+                .getElementById("storageMessage")
+                .textContent =
+                    "No saved student data found.";
+
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+
+</html>

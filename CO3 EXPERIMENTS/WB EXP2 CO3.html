@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Registration System</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+/* Header */
+
+header {
+    background: linear-gradient(135deg, #0f172a, #1e40af);
+    color: white;
+    padding: 25px 7%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #60a5fa;
+}
+
+/* Main */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.title {
+    margin-bottom: 25px;
+}
+
+.title h1 {
+    font-size: 34px;
+}
+
+.title p {
+    color: #64748b;
+    margin-top: 5px;
+}
+
+/* Layout */
+
+.layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 25px;
+}
+
+/* Form */
+
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+}
+
+.card h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 15px 0 7px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px #dbeafe;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 20px;
+    border-radius: 9px;
+    color: white;
+    background: #2563eb;
+}
+
+.add-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Table */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #0f172a;
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+.remove-btn {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 8px 12px;
+    border-radius: 7px;
+}
+
+.remove-btn:hover {
+    background: #fecaca;
+}
+
+.clear-btn {
+    background: #dc2626;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.count {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.empty {
+    text-align: center;
+    padding: 40px;
+    color: #94a3b8;
+}
+
+@media(max-width: 800px) {
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .title h1 {
+        font-size: 27px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">CAMPUS<span>CONNECT</span></div>
+</header>
+
+<div class="container">
+
+    <div class="title">
+        <h1>Student Registration</h1>
+        <p>Manage student records dynamically using DOM manipulation.</p>
+    </div>
+
+    <div class="layout">
+
+        <!-- FORM -->
+
+        <div class="card">
+
+            <h2>Add Student</h2>
+
+            <label>Student Name</label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter student name"
+            >
+
+            <label>Register Number</label>
+
+            <input
+                type="text"
+                id="regno"
+                placeholder="Enter register number"
+            >
+
+            <label>Department</label>
+
+            <select id="department">
+
+                <option value="">Select Department</option>
+
+                <option>Information Technology</option>
+
+                <option>Computer Science</option>
+
+                <option>Electronics and Communication</option>
+
+                <option>Mechanical Engineering</option>
+
+            </select>
+
+            <button class="add-btn" onclick="addStudent()">
+                + Add Student
+            </button>
+
+        </div>
+
+
+        <!-- STUDENT LIST -->
+
+        <div class="card">
+
+            <h2>Registered Students</h2>
+
+            <span id="count" class="count">
+                0 Students
+            </span>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Register No.</th>
+                            <th>Department</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="studentList">
+
+                        <tr id="emptyRow">
+
+                            <td colspan="5" class="empty">
+                                No students registered yet.
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <button class="clear-btn" onclick="clearAll()">
+                Clear All
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let studentCount = 0;
+
+
+function addStudent() {
+
+    let name =
+        document.getElementById("name").value.trim();
+
+    let regno =
+        document.getElementById("regno").value.trim();
+
+    let department =
+        document.getElementById("department").value;
+
+
+    if (name === "" || regno === "" || department === "") {
+
+        alert("Please fill in all student details.");
+        return;
+
+    }
+
+
+    // Remove empty message
+
+    let emptyRow =
+        document.getElementById("emptyRow");
+
+    if (emptyRow) {
+        emptyRow.remove();
+    }
+
+
+    // createElement()
+
+    let row = document.createElement("tr");
+
+
+    let numberCell = document.createElement("td");
+
+    studentCount++;
+
+    numberCell.textContent = studentCount;
+
+
+    let nameCell = document.createElement("td");
+
+    nameCell.textContent = name;
+
+
+    let regCell = document.createElement("td");
+
+    regCell.textContent = regno;
+
+
+    let deptCell = document.createElement("td");
+
+    deptCell.textContent = department;
+
+
+    let actionCell = document.createElement("td");
+
+
+    let removeButton =
+        document.createElement("button");
+
+    removeButton.textContent = "Remove";
+
+    removeButton.className = "remove-btn";
+
+
+    removeButton.onclick = function() {
+
+        // parentElement
+
+        this.parentElement.parentElement.remove();
+
+        updateCount();
+
+    };
+
+
+    // appendChild()
+
+    actionCell.appendChild(removeButton);
+
+    row.appendChild(numberCell);
+    row.appendChild(nameCell);
+    row.appendChild(regCell);
+    row.appendChild(deptCell);
+    row.appendChild(actionCell);
+
+
+    document
+        .getElementById("studentList")
+        .appendChild(row);
+
+
+    // Clear form
+
+    document.getElementById("name").value = "";
+
+    document.getElementById("regno").value = "";
+
+    document.getElementById("department").value = "";
+
+
+    updateCount();
+
+}
+
+
+function updateCount() {
+
+    let list =
+        document.getElementById("studentList");
+
+    // children
+
+    let total =
+        list.children.length;
+
+
+    document.getElementById("count").textContent =
+        total + (total === 1 ? " Student" : " Students");
+
+
+    if (total === 0) {
+
+        let emptyRow =
+            document.createElement("tr");
+
+        emptyRow.id = "emptyRow";
+
+
+        let cell =
+            document.createElement("td");
+
+        cell.colSpan = 5;
+
+        cell.className = "empty";
+
+        cell.textContent =
+            "No students registered yet.";
+
+
+        emptyRow.appendChild(cell);
+
+        list.appendChild(emptyRow);
+
+    }
+
+}
+
+
+function clearAll() {
+
+    let list =
+        document.getElementById("studentList");
+
+
+    // remove() + children
+
+    while (list.children.length > 0) {
+
+        list.children[0].remove();
+
+    }
+
+
+    studentCount = 0;
+
+    updateCount();
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>University Event Registration</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    color: #0f172a;
+}
+
+/* Header */
+
+header {
+    background: #0f172a;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #818cf8;
+}
+
+.event-tag {
+    background: #4f46e5;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* Main */
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 50px auto;
+}
+
+.hero {
+    background: linear-gradient(135deg, #312e81, #4f46e5);
+    color: white;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.hero p {
+    color: #c7d2fe;
+}
+
+/* Form */
+
+.form-card {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(15,23,42,0.1);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px #e0e7ff;
+}
+
+#liveName {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 7px;
+}
+
+button {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.register-btn {
+    width: 100%;
+    background: #4f46e5;
+    color: white;
+    margin-top: 20px;
+}
+
+.register-btn:hover {
+    background: #3730a3;
+    transform: translateY(-2px);
+}
+
+#eventTitle {
+    transition: 0.3s;
+}
+
+.message {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #dcfce7;
+    color: #166534;
+}
+
+@media(max-width: 700px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        CAMPUS<span>CONNECT</span>
+    </div>
+
+    <div class="event-tag">
+        EVENTS
+    </div>
+
+</header>
+
+
+<div class="container">
+
+    <div class="hero">
+
+        <h1 id="eventTitle">
+            Tech Innovation Summit 2026
+        </h1>
+
+        <p>
+            Register for the university's annual technology event.
+        </p>
+
+    </div>
+
+
+    <div class="form-card">
+
+        <h2>Event Registration</h2>
+
+        <br>
+
+        <form id="eventForm">
+
+            <div class="form-grid">
+
+                <div>
+
+                    <label>Student Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                    >
+
+                    <p id="liveName">
+                        Start typing your name...
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <label>Register Number</label>
+
+                    <input
+                        type="text"
+                        id="regno"
+                        placeholder="Enter register number"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>Department</label>
+
+                    <select id="department">
+
+                        <option value="">
+                            Select Department
+                        </option>
+
+                        <option>
+                            Information Technology
+                        </option>
+
+                        <option>
+                            Computer Science
+                        </option>
+
+                        <option>
+                            Electronics
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>Event Type</label>
+
+                    <select id="eventType">
+
+                        <option value="">
+                            Select Event
+                        </option>
+
+                        <option>Workshop</option>
+                        <option>Hackathon</option>
+                        <option>Technical Talk</option>
+                        <option>Paper Presentation</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="full">
+
+                    <button
+                        type="button"
+                        class="register-btn"
+                        onclick="intrinsicClick()">
+
+                        Check Registration
+
+                    </button>
+
+                </div>
+
+                <div class="full">
+
+                    <button
+                        type="submit"
+                        class="register-btn">
+
+                        Submit Registration
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+
+        <div id="message" class="message"></div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/*
+    1. onclick
+    Intrinsic event handling
+*/
+
+function intrinsicClick() {
+
+    alert(
+        "This button demonstrates intrinsic onclick event handling."
+    );
+
+}
+
+
+/*
+    2. input event
+*/
+
+document
+    .getElementById("name")
+    .addEventListener("input", function() {
+
+        document.getElementById("liveName").textContent =
+            "Currently typing: " + this.value;
+
+    });
+
+
+/*
+    3. focus event
+*/
+
+document
+    .getElementById("name")
+    .addEventListener("focus", function() {
+
+        this.style.backgroundColor = "#eef2ff";
+
+    });
+
+
+/*
+    4. blur event
+*/
+
+document
+    .getElementById("name")
+    .addEventListener("blur", function() {
+
+        this.style.backgroundColor = "white";
+
+    });
+
+
+/*
+    5. change event
+*/
+
+document
+    .getElementById("department")
+    .addEventListener("change", function() {
+
+        if (this.value !== "") {
+
+            alert(
+                "Department selected: " + this.value
+            );
+
+        }
+
+    });
+
+
+/*
+    6. mouseover
+*/
+
+document
+    .getElementById("eventTitle")
+    .addEventListener("mouseover", function() {
+
+        this.style.transform = "scale(1.02)";
+        this.style.color = "#c7d2fe";
+
+    });
+
+
+/*
+    7. mouseout
+*/
+
+document
+    .getElementById("eventTitle")
+    .addEventListener("mouseout", function() {
+
+        this.style.transform = "scale(1)";
+        this.style.color = "white";
+
+    });
+
+
+/*
+    8. submit event
+*/
+
+document
+    .getElementById("eventForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        let name =
+            document.getElementById("name").value;
+
+        let message =
+            document.getElementById("message");
+
+
+        if (name === "") {
+
+            message.style.display = "block";
+
+            message.style.background = "#fee2e2";
+
+            message.style.color = "#991b1b";
+
+            message.textContent =
+                "Please enter your name before submitting.";
+
+            return;
+
+        }
+
+
+        message.style.display = "block";
+
+        message.style.background = "#dcfce7";
+
+        message.style.color = "#166534";
+
+        message.textContent =
+            "✓ Registration submitted successfully for "
+            + name + "!";
+
+    });
+
+</script>
+
+</body>
+
+</html>
