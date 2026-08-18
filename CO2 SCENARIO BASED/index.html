@@ -3,118 +3,583 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIMATS Event Portal</title>
+    <title>SIMATS University | Event Registration Portal</title>
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- Internal CSS demonstration -->
     <style>
-        #notice{
-            background:#fff3cd;
-            text-align:center;
-            padding:10px;
-            font-weight:bold;
+        .internal-highlight {
+            border-left: 4px solid #f4b942;
+            padding-left: 15px;
         }
     </style>
 </head>
+
 <body>
 
-    <header class="header">
-        <div class="logo">SIMATS UNIVERSITY</div>
-        <nav>
+<!-- TOP ANNOUNCEMENT -->
+<div class="announcement">
+    <span>🎓</span>
+    Admissions & Events Portal 2026
+    <strong>Registrations are now open</strong>
+</div>
+
+
+<!-- HEADER -->
+<header class="header">
+
+    <nav class="navbar">
+
+        <div class="brand">
+            <div class="logo">SU</div>
+
+            <div class="brand-text">
+                <h2>SIMATS</h2>
+                <p>University Events</p>
+            </div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#about">Why Attend</a></li>
+            <li><a href="#register">Register</a></li>
+        </ul>
+
+        <a href="#register" class="nav-button">Register Now</a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="hero-label">2026 UNIVERSITY EVENTS</span>
+
+        <h1>
+            Learn. Connect.
+            <span>Lead.</span>
+        </h1>
+
+        <p>
+            Discover workshops, hackathons, cultural celebrations,
+            placement programmes and sports events happening across
+            our university campus.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#events" class="primary-btn">Explore Events →</a>
+            <a href="#register" class="secondary-btn">Register for an Event</a>
+        </div>
+
+        <div class="hero-info">
+
+            <div>
+                <strong>25+</strong>
+                <small>Events</small>
+            </div>
+
+            <div>
+                <strong>5K+</strong>
+                <small>Students</small>
+            </div>
+
+            <div>
+                <strong>12</strong>
+                <small>Departments</small>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-card">
+
+        <div class="hero-card-top">
+            <span>FEATURED EVENT</span>
+            <span class="live-dot">● LIVE</span>
+        </div>
+
+        <div class="calendar-icon">
+            <strong>24</strong>
+            <small>SEP</small>
+        </div>
+
+        <h3>AI & Innovation Summit 2026</h3>
+
+        <p>
+            A national-level technology summit featuring
+            innovation challenges, expert talks and networking.
+        </p>
+
+        <div class="hero-card-details">
+            <span>📍 Main Auditorium</span>
+            <span>🕘 9:00 AM</span>
+        </div>
+
+        <a href="#register">View Event Details →</a>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+
+    <div class="stat">
+        <span>01</span>
+        <strong>Technical</strong>
+        <p>Workshops & hackathons</p>
+    </div>
+
+    <div class="stat">
+        <span>02</span>
+        <strong>Cultural</strong>
+        <p>Arts & celebrations</p>
+    </div>
+
+    <div class="stat">
+        <span>03</span>
+        <strong>Career</strong>
+        <p>Placement programmes</p>
+    </div>
+
+    <div class="stat">
+        <span>04</span>
+        <strong>Sports</strong>
+        <p>Competitions & meets</p>
+    </div>
+
+</section>
+
+
+<!-- EVENTS -->
+<section class="events-section" id="events">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-label">DISCOVER & PARTICIPATE</span>
+
+            <h2>Upcoming University Events</h2>
+        </div>
+
+        <p>
+            Explore experiences designed to help you learn new skills,
+            meet new people and create unforgettable memories.
+        </p>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <!-- EVENT 1 -->
+        <article class="event-card featured-card">
+
+            <div class="event-image tech-image">
+                <span class="category-badge">TECHNICAL</span>
+                <span class="status-badge">● OPEN</span>
+                <div class="event-number">01</div>
+            </div>
+
+            <div class="event-content">
+
+                <div class="event-date">
+                    <strong>18</strong>
+                    <span>SEP<br>2026</span>
+                </div>
+
+                <div class="event-main">
+
+                    <h3>AI Innovation Hackathon</h3>
+
+                    <p class="event-meta">
+                        🕘 9:00 AM – 6:00 PM &nbsp; | &nbsp; 📍 Innovation Lab
+                    </p>
+
+                    <p>
+                        Build innovative AI-powered solutions and compete
+                        with talented student developers from across the campus.
+                    </p>
+
+                    <a href="#register" class="event-btn">Register →</a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- EVENT 2 -->
+        <article class="event-card">
+
+            <div class="event-image cultural-image">
+                <span class="category-badge">CULTURAL</span>
+                <span class="status-badge">● OPEN</span>
+                <div class="event-number">02</div>
+            </div>
+
+            <div class="event-content">
+
+                <div class="event-date">
+                    <strong>22</strong>
+                    <span>SEP<br>2026</span>
+                </div>
+
+                <div class="event-main">
+
+                    <h3>University Cultural Fest</h3>
+
+                    <p class="event-meta">
+                        🕕 6:00 PM – 9:00 PM &nbsp; | &nbsp; 📍 Open Air Theatre
+                    </p>
+
+                    <p>
+                        Celebrate music, dance, theatre and creativity
+                        with students from every department.
+                    </p>
+
+                    <a href="#register" class="event-btn">Register →</a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- EVENT 3 -->
+        <article class="event-card">
+
+            <div class="event-image career-image">
+                <span class="category-badge">CAREER</span>
+                <span class="status-badge">● OPEN</span>
+                <div class="event-number">03</div>
+            </div>
+
+            <div class="event-content">
+
+                <div class="event-date">
+                    <strong>28</strong>
+                    <span>SEP<br>2026</span>
+                </div>
+
+                <div class="event-main">
+
+                    <h3>Placement Preparation Bootcamp</h3>
+
+                    <p class="event-meta">
+                        🕘 10:00 AM – 4:00 PM &nbsp; | &nbsp; 📍 Seminar Hall
+                    </p>
+
+                    <p>
+                        Improve aptitude, communication, interview skills
+                        and technical readiness with industry mentors.
+                    </p>
+
+                    <a href="#register" class="event-btn">Register →</a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- EVENT 4 -->
+        <article class="event-card">
+
+            <div class="event-image sports-image">
+                <span class="category-badge">SPORTS</span>
+                <span class="status-badge">● OPEN</span>
+                <div class="event-number">04</div>
+            </div>
+
+            <div class="event-content">
+
+                <div class="event-date">
+                    <strong>03</strong>
+                    <span>OCT<br>2026</span>
+                </div>
+
+                <div class="event-main">
+
+                    <h3>Inter-Department Sports Meet</h3>
+
+                    <p class="event-meta">
+                        🕗 8:00 AM – 5:00 PM &nbsp; | &nbsp; 📍 University Ground
+                    </p>
+
+                    <p>
+                        Compete across multiple sporting events and
+                        represent your department with pride.
+                    </p>
+
+                    <a href="#register" class="event-btn">Register →</a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- WHY ATTEND -->
+<section class="why-section" id="about">
+
+    <div class="why-image">
+
+        <div class="experience-card">
+            <strong>2026</strong>
+            <span>Campus Experience</span>
+        </div>
+
+    </div>
+
+    <div class="why-content">
+
+        <span class="section-label">MORE THAN AN EVENT</span>
+
+        <h2>Make Your University Experience Count.</h2>
+
+        <p class="internal-highlight">
+            University events are opportunities to discover your interests,
+            develop practical skills and build meaningful connections.
+        </p>
+
+        <div class="benefit-grid">
+
+            <div>
+                <span>✦</span>
+                <h3>Learn</h3>
+                <p>Gain practical knowledge from experts and peers.</p>
+            </div>
+
+            <div>
+                <span>✦</span>
+                <h3>Connect</h3>
+                <p>Meet students, mentors and industry professionals.</p>
+            </div>
+
+            <div>
+                <span>✦</span>
+                <h3>Compete</h3>
+                <p>Challenge yourself and showcase your abilities.</p>
+            </div>
+
+            <div>
+                <span>✦</span>
+                <h3>Lead</h3>
+                <p>Develop confidence, teamwork and leadership skills.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REGISTRATION -->
+<section class="registration-section" id="register">
+
+    <div class="registration-intro">
+
+        <span class="section-label">SECURE YOUR SPOT</span>
+
+        <h2>Ready to Be Part of It?</h2>
+
+        <p>
+            Complete the registration form and reserve your place
+            at your preferred university event.
+        </p>
+
+        <div class="registration-note">
+            <strong>Registration Guidelines</strong>
+            <ul>
+                <li>Use your official university register number.</li>
+                <li>Select one event per registration.</li>
+                <li>Carry your student ID during the event.</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <form class="registration-form">
+
+        <div class="form-heading">
+            <span>EVENT REGISTRATION</span>
+            <h3>Reserve Your Seat</h3>
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="name">Student Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="regno">Register Number</label>
+                <input type="text" id="regno" placeholder="Eg. 24IT1234" required>
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="department">Department</label>
+
+                <select id="department" required>
+                    <option value="">Select department</option>
+                    <option>Information Technology</option>
+                    <option>Computer Science</option>
+                    <option>Electronics & Communication</option>
+                    <option>Mechanical Engineering</option>
+                    <option>Biomedical Engineering</option>
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="email">University Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="student@university.edu"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="event">Select Event</label>
+
+            <select id="event" required>
+                <option value="">Choose an event</option>
+                <option>AI Innovation Hackathon</option>
+                <option>University Cultural Fest</option>
+                <option>Placement Preparation Bootcamp</option>
+                <option>Inter-Department Sports Meet</option>
+            </select>
+
+        </div>
+
+
+        <button type="submit" class="submit-btn">
+            Complete Registration →
+        </button>
+
+        <!-- Inline CSS demonstration -->
+        <p style="text-align:center; margin-top:15px;">
+            🔒 Your registration information is kept confidential.
+        </p>
+
+    </form>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <div class="brand">
+                <div class="logo">SU</div>
+
+                <div class="brand-text">
+                    <h2>SIMATS</h2>
+                    <p>University Events</p>
+                </div>
+            </div>
+
+            <p>
+                Connecting students with opportunities,
+                experiences and communities beyond the classroom.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Explore</h3>
+
             <a href="#home">Home</a>
             <a href="#events">Events</a>
+            <a href="#about">Why Attend</a>
             <a href="#register">Register</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <div id="notice">Admissions & Event Registration Open for August 2026</div>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>University Event Registration Portal</h1>
-            <p>Register for technical workshops, hackathons, cultural events and placement programmes.</p>
-            <p style="color:#ffe082;font-weight:bold;">Early registration is free for the first 100 students.</p>
-            <a href="#register" class="btn">Register Now</a>
-        </div>
-    </section>
-
-    <section id="events" class="events">
-        <h2>Featured Events</h2>
-
-        <div class="grid">
-
-            <div class="card featured">
-                <span class="badge">OPEN</span>
-                <h3>AI Hackathon</h3>
-                <p class="category">Technical</p>
-                <p>18 Aug 2026 • Innovation Lab</p>
-                <p>Build real-world AI solutions in a 24-hour coding challenge.</p>
-                <button>Register</button>
-            </div>
-
-            <div class="card">
-                <span class="badge closed">CLOSED</span>
-                <h3>Cultural Fest</h3>
-                <p class="category">Cultural</p>
-                <p>20 Aug 2026 • Open Auditorium</p>
-                <p>Music, dance, drama and student performances.</p>
-                <button disabled>Closed</button>
-            </div>
-
-            <div class="card">
-                <span class="badge">OPEN</span>
-                <h3>Placement Bootcamp</h3>
-                <p class="category">Placement</p>
-                <p>22 Aug 2026 • Seminar Hall</p>
-                <p>Resume building and mock interviews.</p>
-                <button>Register</button>
-            </div>
-
-            <div class="card">
-                <span class="badge">OPEN</span>
-                <h3>Sports Meet</h3>
-                <p class="category">Sports</p>
-                <p>24 Aug 2026 • University Ground</p>
-                <p>Football, volleyball and athletics competitions.</p>
-                <button>Register</button>
-            </div>
 
         </div>
-    </section>
 
-    <section id="register" class="register">
-        <h2>Student Registration</h2>
 
-        <form class="form">
-            <input type="text" placeholder="Student Name" required>
-            <input type="text" placeholder="Register Number" required>
-            <input type="email" placeholder="Email Address" required>
+        <div class="footer-column">
 
-            <select required>
-                <option>Select Department</option>
-                <option>IT</option>
-                <option>CSE</option>
-                <option>ECE</option>
-            </select>
+            <h3>Event Categories</h3>
 
-            <select required>
-                <option>Select Event</option>
-                <option>AI Hackathon</option>
-                <option>Cultural Fest</option>
-                <option>Placement Bootcamp</option>
-                <option>Sports Meet</option>
-            </select>
+            <a href="#events">Technical</a>
+            <a href="#events">Cultural</a>
+            <a href="#events">Career</a>
+            <a href="#events">Sports</a>
 
-            <button type="submit" class="submit">Submit Registration</button>
-        </form>
-    </section>
+        </div>
 
-    <a href="#register" class="help">?</a>
 
-    <footer id="contact">
-        <p>events@simats.edu.in | +91 98765 43210</p>
-        <p>© 2026 SIMATS University</p>
-    </footer>
+        <div class="footer-column">
+
+            <h3>Contact</h3>
+
+            <p>📍 Chennai, Tamil Nadu</p>
+            <p>✉ events@simats.edu.in</p>
+            <p>☎ +91 44 1234 5678</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>© 2026 SIMATS University Events Portal. All Rights Reserved.</p>
+
+        <p>Designed for Student Engagement</p>
+
+    </div>
+
+</footer>
+
+
+<!-- FIXED HELP BUTTON -->
+<a href="#register" class="help-button" title="Register for an event">?</a>
 
 </body>
 </html>
